@@ -1,0 +1,97 @@
+/* ===== skeuo variants: ?theme=a|b|c|d  (shared layout first) ===== */
+html[data-theme].pref-crt body:before,html[data-theme] .screen-scan{display:none}
+html[data-theme] .paper:before{display:none}
+html[data-theme] .paper--review{display:flex;flex-direction:column;max-height:calc(100dvh - var(--desk-top,90px) - 14px);overflow:hidden}
+html[data-theme] .paper--review>*{flex:none}
+html[data-theme] .paper--review>.transcript-wrap{flex:1 1 auto;min-height:4rem;overflow:auto}
+html[data-theme] .paper--review .document-body{max-height:none!important}
+html[data-theme] .screen{max-height:27vh}
+@media (min-width:721px){html[data-theme] .paper--rules,html[data-theme] .paper--threads{max-height:calc(100dvh - var(--desk-top,90px) - 14px);overflow:auto}}
+@media (max-width:720px){html[data-theme] .paper--review{order:-1}}
+html[data-theme] .decisions{flex:none;gap:.7rem}
+/* stamp impression */
+.stamp-ink{position:fixed;z-index:9999;pointer-events:none;padding:.35em .8em;border:4px double currentColor;border-radius:6px;font:700 2.4rem/1 var(--serif);letter-spacing:.3em;color:rgba(170,30,24,.85);
+  mix-blend-mode:multiply;transform:translate(-50%,-50%) rotate(-9deg) scale(1.8);opacity:0;animation:stampIn .9s cubic-bezier(.2,1.4,.4,1) forwards;
+  -webkit-mask:radial-gradient(circle at 30% 40%,#000 55%,rgba(0,0,0,.65) 70%,#000 85%);filter:blur(.3px)}
+@keyframes stampIn{0%{opacity:0;transform:translate(-50%,-50%) rotate(-9deg) scale(1.8)}35%{opacity:1;transform:translate(-50%,-50%) rotate(-9deg) scale(.96)}55%{transform:translate(-50%,-50%) rotate(-9deg) scale(1)}100%{opacity:.9;transform:translate(-50%,-50%) rotate(-9deg) scale(1)}}
+
+/* ---------- A 90年代国企办公室 ---------- */
+html[data-theme=a] body{background:radial-gradient(ellipse 55% 60% at 50% 18%,rgba(255,226,160,.28),rgba(0,0,0,0) 60%),radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.6)),url(./skeuo/wood.webp) center/900px auto #3a2414!important}
+html[data-theme=a] .masthead,html[data-theme=a] .top-bar{background:linear-gradient(#2b4a3a,#1d3328)!important;border-bottom:3px solid #0e1a14;color:#e8dcc0}
+html[data-theme=a] .masthead *,html[data-theme=a] .top-bar *{color:#efe4c8!important}
+html[data-theme=a] .desk:before{content:"";position:fixed;top:-60px;left:50%;width:300px;height:120px;transform:translateX(-50%);border-radius:0 0 150px 150px/0 0 90px 90px;background:radial-gradient(ellipse at 50% 0,#4f8a62,#1f4a32 70%);box-shadow:0 30px 120px 60px rgba(255,220,150,.18);pointer-events:none;z-index:3}
+html[data-theme=a] .desk:after{content:"";position:fixed;right:28px;bottom:30px;width:74px;height:84px;border-radius:6px 6px 14px 14px;background:linear-gradient(90deg,#d9dcd2,#fbfbf5 40%,#c9ccc2);box-shadow:inset 0 6px 0 #2c4c78,inset 0 -4px 0 #2c4c78,8px 10px 18px rgba(0,0,0,.55);pointer-events:none;z-index:3}
+html[data-theme=a] .paper--review{background:url(./skeuo/kraft.webp) #b58e5c!important;border:1px solid #7c5a34!important;border-radius:3px 10px 4px 4px;box-shadow:0 2px 0 #8c6a40,0 4px 0 #a07a4c,0 22px 40px rgba(0,0,0,.6)!important}
+html[data-theme=a] .paper--review:after{content:"卷宗";position:absolute;top:-1px;right:38px;padding:.1rem 1.1rem;background:url(./skeuo/kraft.webp) #b58e5c;border-radius:0 0 6px 6px;font:700 .8rem var(--serif);color:#5a3d1f;letter-spacing:.3em;box-shadow:0 2px 3px rgba(0,0,0,.3)}
+html[data-theme=a] .paper--review .document-body,html[data-theme=a] .transcript-wrap{background:url(./skeuo/paper.webp)!important;box-shadow:0 2px 6px rgba(0,0,0,.35)!important;border:none!important}
+html[data-theme=a] .screen{border:9px solid #f2ede0!important;border-bottom-width:22px!important;transform:rotate(-1.2deg);box-shadow:4px 8px 16px rgba(0,0,0,.55)!important}
+html[data-theme=a] .paper--rules,html[data-theme=a] .paper--threads{background:url(./skeuo/paper.webp) #efe7d2!important;transform:rotate(-.6deg);box-shadow:0 14px 28px rgba(0,0,0,.55)!important}
+html[data-theme=a] .paper--threads{transform:rotate(.7deg)}
+html[data-theme=a] .decisions{background:linear-gradient(#5a3a22,#3b2414);border-radius:6px;padding:.7rem!important;box-shadow:inset 0 2px 6px rgba(0,0,0,.6)}
+html[data-theme=a] .decisions .btn{background:linear-gradient(#a8743f,#7c5128 60%,#2a1a10 60%,#1a100a)!important;color:#f6e7c8!important;border:none!important;border-radius:10px 10px 4px 4px!important;box-shadow:0 6px 0 #120a05,0 9px 12px rgba(0,0,0,.5)!important;min-height:3.4rem;text-shadow:0 1px 0 #000}
+html[data-theme=a] .decisions .btn:active{transform:translateY(5px);box-shadow:0 1px 0 #120a05!important}
+html[data-theme=a] .decisions .btn *{color:#e8cfa0!important}
+
+/* ---------- B 冷峻现代合规部 ---------- */
+html[data-theme=b] body{background:linear-gradient(180deg,rgba(220,240,255,.18),rgba(0,0,0,.25)),url(./skeuo/metal.webp) center/600px auto #8d9196!important}
+html[data-theme=b] .masthead,html[data-theme=b] .top-bar{background:linear-gradient(#e9eef2,#c9d0d6)!important;border-bottom:1px solid #8a939b;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+html[data-theme=b] .masthead *,html[data-theme=b] .top-bar *{color:#24303a!important}
+html[data-theme=b] .desk:before{content:"";position:fixed;top:0;left:10%;right:10%;height:8px;background:linear-gradient(#fff,#dfeaf5);box-shadow:0 0 60px 30px rgba(225,240,255,.45);pointer-events:none;z-index:3}
+html[data-theme=b] .paper{background:#f7f8f8!important;border:1px solid #c4cad0!important;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.2),0 10px 24px rgba(30,40,50,.25)!important;color:#1d252c}
+html[data-theme=b] .paper--review{border-top:6px solid #2f6db3!important}
+html[data-theme=b] .paper--review:after{content:"COMPLIANCE · 待裁定";position:absolute;top:-24px;left:24px;padding:.15rem .8rem;background:#2f6db3;color:#fff;font:600 .72rem var(--sans);letter-spacing:.12em;border-radius:4px 4px 0 0}
+html[data-theme=b] .paper-head{border-bottom:1px solid #d3d8dd!important}
+html[data-theme=b] .paper-head *,html[data-theme=b] .paper h2,html[data-theme=b] .paper h3{color:#1d252c!important;font-family:var(--sans)!important}
+html[data-theme=b] .screen{border:1px solid #9aa3ab!important;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.3)!important}
+html[data-theme=b] .document-body,html[data-theme=b] .transcript-wrap{background:#fff!important;border:1px solid #dde2e6!important;box-shadow:none!important}
+html[data-theme=b] .decisions{background:linear-gradient(#d4d9de,#b8bfc6);border-radius:8px;padding:.6rem!important;border:1px solid #8f979f}
+html[data-theme=b] .decisions .btn{border-radius:999px 999px 10px 10px!important;border:none!important;color:#fff!important;min-height:3.2rem;font-family:var(--sans)!important;box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 4px 0 rgba(0,0,0,.35)!important}
+html[data-theme=b] .decisions .btn *{color:rgba(255,255,255,.85)!important}
+html[data-theme=b] .decisions .btn--approve{background:linear-gradient(#3c4650,#262d34)!important}
+html[data-theme=b] .decisions .btn--modify{background:linear-gradient(#2f6db3,#1e4d82)!important}
+html[data-theme=b] .decisions .btn--reject{background:linear-gradient(#c8372d,#8f2119)!important}
+html[data-theme=b] .decisions .btn--escalate{background:linear-gradient(#6b7680,#4a535c)!important}
+html[data-theme=b] .decisions .btn:active{transform:translateY(3px)}
+
+/* ---------- C 俯视桌面全拟物 ---------- */
+html[data-theme=c] body{background:radial-gradient(ellipse 70% 70% at 45% 40%,rgba(255,215,150,.22),rgba(0,0,0,.55) 90%),url(./skeuo/wood.webp) center/1100px auto #4a2e18!important}
+html[data-theme=c] .masthead,html[data-theme=c] .top-bar{background:rgba(20,12,6,.55)!important;backdrop-filter:blur(3px);border:none}
+html[data-theme=c] .masthead *,html[data-theme=c] .top-bar *{color:#f2e6cc!important}
+html[data-theme=c] .desk{gap:1.6rem!important}
+html[data-theme=c] .paper--review{background:url(./skeuo/paper.webp) #f3ecd9!important;transform:rotate(-.5deg);box-shadow:-6px 0 0 -2px #e9dfc6,-11px 2px 0 -4px #ddd0b2,0 30px 50px rgba(0,0,0,.6)!important;border:none!important}
+html[data-theme=c] .paper--review{overflow:visible!important}html[data-theme=c] .paper--review:before{content:"";display:block!important;position:absolute;top:-14px;left:46px;width:22px;height:58px;border:3px solid #8f969c;border-radius:12px;border-bottom-color:transparent;z-index:6;box-shadow:inset 0 0 0 4px transparent;background:linear-gradient(transparent 0 0);transform:rotate(8deg)}
+html[data-theme=c] .paper--rules{background:#f7e27c!important;transform:rotate(-2deg);box-shadow:3px 14px 20px rgba(0,0,0,.5)!important;border:none!important}
+html[data-theme=c] .paper--rules *{background-color:transparent!important}
+html[data-theme=c] .paper--threads{background:#cfe6f2!important;transform:rotate(1.8deg);box-shadow:3px 14px 20px rgba(0,0,0,.5)!important;border:none!important}
+html[data-theme=c] .paper--threads:after,html[data-theme=c] .paper--rules:after{content:"";position:absolute;top:-10px;left:50%;width:90px;height:24px;transform:translateX(-50%) rotate(-3deg);background:rgba(240,235,220,.6);box-shadow:0 1px 2px rgba(0,0,0,.2)}
+html[data-theme=c] .screen{border:10px solid #fbf8f0!important;border-bottom-width:28px!important;transform:rotate(2deg);box-shadow:6px 10px 18px rgba(0,0,0,.45)!important}
+html[data-theme=c] .document-body,html[data-theme=c] .transcript-wrap{background:transparent!important;border:none!important;box-shadow:none!important}
+html[data-theme=c] .decisions{border:none!important;background:none}
+html[data-theme=c] .decisions .btn{border:none!important;border-radius:50% 50% 12px 12px/40% 40% 12px 12px!important;background:radial-gradient(ellipse at 50% 28%,#c4874d,#8a5528 55%,#3a2210 56%,#1b1009 75%)!important;color:#ffe9c8!important;min-height:3.8rem;box-shadow:0 10px 14px rgba(0,0,0,.55)!important;text-shadow:0 1px 1px #000}
+html[data-theme=c] .decisions .btn *{color:#f0d6a8!important}
+html[data-theme=c] .decisions .btn:hover{transform:translateY(-4px) rotate(-2deg)}
+html[data-theme=c] .decisions .btn:active{transform:translateY(4px) scale(.97)}
+
+/* ---------- D 档案柜/抽屉式 ---------- */
+html[data-theme=d] body{background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),repeating-linear-gradient(180deg,#6f7a6c 0 196px,#3f473d 196px 200px),#5b6658!important}
+html[data-theme=d] .masthead,html[data-theme=d] .top-bar{background:linear-gradient(#7d8a78,#5e6a5a)!important;border-bottom:4px solid #2e352b}
+html[data-theme=d] .masthead *,html[data-theme=d] .top-bar *{color:#f2f0e4!important}
+html[data-theme=d] .paper--review{background:url(./skeuo/kraft.webp) #b68f5d!important;border:none!important;border-radius:2px;box-shadow:0 -12px 0 -4px #d9c7a0,0 -22px 0 -8px #c7b083,0 26px 40px rgba(0,0,0,.65)!important;margin-top:18px}
+html[data-theme=d] .paper--review:after{content:"";position:absolute;left:-14px;right:-14px;bottom:-30px;height:34px;background:linear-gradient(#7e8a79,#56604f);border-top:2px solid #a9b3a3;box-shadow:0 6px 12px rgba(0,0,0,.5);z-index:-1}
+html[data-theme=d] .document-body,html[data-theme=d] .transcript-wrap{background:url(./skeuo/paper.webp)!important;border:none!important;box-shadow:0 2px 5px rgba(0,0,0,.35)!important}
+html[data-theme=d] .paper--rules,html[data-theme=d] .paper--threads{background:linear-gradient(#8b9886,#6c7868)!important;border:2px solid #3a4237!important;border-radius:4px;color:#f4f1e6;box-shadow:inset 0 2px 0 #b3bdad,0 12px 24px rgba(0,0,0,.5)!important}
+html[data-theme=d] .paper-head *{color:#f4f1e6!important}
+html[data-theme=d] .paper--rules>*:not(.paper-head),html[data-theme=d] .paper--threads>*:not(.paper-head){background:url(./skeuo/paper.webp) #efe8d4;color:#2a2a24;padding:.5rem .6rem;margin-top:.5rem;box-shadow:0 2px 4px rgba(0,0,0,.35);border-radius:2px}
+html[data-theme=d] .screen{border:6px solid #e8e0c8!important;box-shadow:0 0 0 1px #9b8f70,4px 6px 12px rgba(0,0,0,.45)!important}
+html[data-theme=d] .decisions{background:linear-gradient(#7e8a79,#5b6656);border:2px solid #333b31;border-radius:6px;padding:.7rem!important}
+html[data-theme=d] .decisions .btn{background:linear-gradient(#f3ead2,#ddd0ae)!important;border:2px solid #9a8a5e!important;border-radius:3px!important;color:#2b2a24!important;min-height:3.2rem;font-family:"SF Mono",Menlo,monospace!important;
+  box-shadow:inset 0 0 0 4px #c9b98c,0 0 0 4px #b8a26b,0 0 0 6px #4d4630,0 6px 10px rgba(0,0,0,.5)!important;
+  background-image:radial-gradient(circle,#2b2a24 2px,transparent 2.5px),linear-gradient(#f3ead2,#ddd0ae)!important;background-size:12px 12px,100% 100%!important;background-position:6px 4px,0 0!important;background-repeat:repeat-x,no-repeat!important}
+html[data-theme=d] .decisions .btn:active{transform:translateY(2px)}
+@media (max-width:720px){
+ html[data-theme] .paper--review{overflow-y:auto;overflow-x:hidden}
+ html[data-theme] .paper--review>.decisions{position:sticky;bottom:0;z-index:5;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.35rem!important;padding:.45rem!important}
+ html[data-theme] .paper--review>.decisions .btn{min-height:2.8rem!important;padding:.3rem .2rem!important;font-size:.85rem!important}
+ html[data-theme] .paper--review>.decisions .decisions-hint{display:none}
+ html[data-theme] .paper--review>.transcript-wrap{flex:none}
+}
