@@ -87,3 +87,6 @@ html .ending-card .hr-verdict{background:none!important;border:none!important}
 html .ending-card .hr-verdict-stamp{font-size:1.1rem!important;border:3px double rgba(170,30,24,.8)!important;color:rgba(170,30,24,.85)!important;padding:.2rem .7rem!important;mix-blend-mode:multiply}
 html .ending-card{background-image:url(./skeuo/paper.webp)!important}
 html .title-stage{background:transparent!important}
+@media (max-width:700px){.paper--review{max-height:calc(100dvh - var(--desk-top,120px) - 16px);overflow-y:auto}.decisions{position:sticky;bottom:0;z-index:5;display:grid!important;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px 4px;background:#e9dcc0;box-shadow:0 -4px 10px rgba(0,0,0,.25)}.decisions .btn{min-width:0;padding:8px 2px;font-size:.8rem;white-space:nowrap}.decisions-hint,.decisions .hint{display:none}.screen{max-height:16vh}}
+@media (max-width:700px){.decisions .btn{padding:6px 2px!important;font-size:.75rem!important;line-height:1.2;min-height:0!important}.decisions{padding:4px!important}}
+@media (max-width:700px){.decisions{bottom:6px!important;margin-bottom:6px}}
